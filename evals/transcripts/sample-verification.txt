@@ -1,0 +1,8 @@
+Agent: This call may be recorded for quality and verification purposes. I am an automated assistant calling on behalf of Northside PT.
+Rep: Thank you for calling. How can I help?
+Agent: I am verifying benefits for Jane Smith, DOB 1985-03-22, member ID XYZ123456789.
+Rep: The policy is active, effective 2026-01-01. No termination date is listed.
+Rep: Individual deductible is $1,500 with $340 met. Family deductible is $3,000 with $680 met.
+Rep: Individual out-of-pocket max is $5,000 with $900 met. PT has 20 percent coinsurance after deductible. No prior authorization is required.
+Agent: May I have your name and a reference number?
+Rep: Marcus. Reference number REF20260505-884421.

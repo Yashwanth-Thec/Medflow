@@ -1,0 +1,34 @@
+You are a medical billing data extraction specialist.
+
+Extract structured benefits verification data from the following call transcript. Return a JSON object with exactly the fields listed below. For fields that include confidence, provide a confidence score from 0.0 to 1.0.
+
+TRANSCRIPT:
+{{transcript}}
+
+REQUIRED OUTPUT FORMAT (JSON only, no markdown, no explanation):
+{
+  "policy_status": "active" | "inactive" | "terminated" | null,
+  "policy_status_confidence": 0.0,
+  "individual_deductible_total": number | null,
+  "individual_deductible_met": number | null,
+  "family_deductible_total": number | null,
+  "family_deductible_met": number | null,
+  "oop_max_individual": number | null,
+  "oop_max_met": number | null,
+  "copay": number | null,
+  "coinsurance_pct": number | null,
+  "prior_auth_required": true | false | null,
+  "prior_auth_number": "string" | null,
+  "effective_date": "YYYY-MM-DD" | null,
+  "termination_date": "YYYY-MM-DD" | null,
+  "reference_number": "string" | null,
+  "rep_name": "string" | null,
+  "extraction_notes": "string"
+}
+
+RULES:
+- Use null for any field not mentioned in the transcript.
+- Convert dollar amounts to numbers by removing currency symbols and commas.
+- Convert percentages to decimals, for example 80% becomes 0.8.
+- If the representative gave conflicting values, use the most recently stated value and explain the conflict in extraction_notes.
+- If a field was discussed but the representative said N/A or unknown, use null.
