@@ -1,0 +1,24 @@
+{
+  "name": "phonetree",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI insurance verification agent MVP monorepo scaffold.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,dashboard -c blue,green \"npm run dev:api\" \"npm run dev:dashboard\"",
+    "dev:api": "npm run dev --workspace @phonetree/api",
+    "dev:dashboard": "npm run dev --workspace @phonetree/dashboard",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
